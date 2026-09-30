@@ -3,636 +3,718 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Lamecie Bakery</title>
-
-    <link rel="stylesheet" href="style.css">
+<title>Lamecie Bakery</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    /* Language buttons */
+    .language-switcher {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        margin-left: 12px;
+    }
+    .language-switcher button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 5px 7px;
+    }
+    .language-switcher button.active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .drink-options {
+        margin: 12px 0;
+    }
+    .drink-options label {
+        display: block;
+        margin-bottom: 6px;
+    }
+    .drink-options select {
+        width: 100%;
+        padding: 8px;
+        border-radius: 6px;
+    }
+</style>
 </head>
-
 <body>
-
 <header>
     <nav>
-
-        <a href="#home" class="logo">Lamecie</a>
-
-        <button class="menu-toggle" onclick="toggleMobileMenu()">
-            ☰
-        </button>
-
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#menu">Menu</a>
-            <a href="#orders">Order</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <button class="cart-button" onclick="openCart()">
-            🛍️ Cart
-            <span id="cart-count">0</span>
-        </button>
-
-    </nav>
-</header>
-
-
-<main>
-
-<!-- ================= HOME ================= -->
-
-<section id="home" class="hero">
-
-    <div class="hero-content">
-
-        <p class="small-title">WELCOME TO LAMECIE</p>
-
-        <h1>
-            Cheesecake<br>
-            made special.
-        </h1>
-
-        <p>
-            Classic flavors, innovative creations,
-            and desserts made to make every moment sweeter.
-        </p>
-
-        <a href="#menu" class="button">
-            Explore Our Menu
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about" class="about">
-
-    <div class="section-text">
-
-        <p class="small-title">OUR STORY</p>
-
-        <h2>More than just a bakery.</h2>
-
-        <p>
-            Lamecie Bakery is a premium dessert bakery located in
-            Equipetrol, Santa Cruz. We specialize in high-quality
-            cheesecakes and innovative desserts.
-        </p>
-
-        <p>
-            Our goal is to create a beautiful, cozy, and welcoming
-            environment where customers can enjoy delicious desserts
-            and have a memorable experience.
-        </p>
-
-        <p class="owners">
-            Created by Lara Torres, Maciel Nassar & Martina Guzman.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CHEESECAKES ================= -->
-
-<section id="menu" class="menu">
-
-    <p class="small-title">OUR SPECIALTY</p>
-
-    <h2>Our Cheesecakes</h2>
-
-    <p class="menu-intro">
-        Our signature cheesecakes combine classic flavors with
-        creative and innovative combinations.
-    </p>
-
-
-    <div class="products">
-
-
-        <!-- CLASSIC -->
-
-        <div class="product-card">
-
-            <img
-                src="classic-cheesecake.jpg"
-                alt="Classic Cheesecake"
-                class="product-photo"
-            >
-
-            <h3>Classic</h3>
-
-            <p>
-                Our traditional creamy cheesecake.
-            </p>
-
-            <span>Bs 35</span>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Classic Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- RED BERRIES -->
-
-        <div class="product-card">
-
-            <img
-                src="red-berries-cheesecake.jpg"
-                alt="Red Berries Cheesecake"
-                class="product-photo"
-            >
-
-            <h3>Red Berries</h3>
-
-            <p>
-                Creamy cheesecake with delicious red berries.
-            </p>
-
-            <span>Bs 35</span>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Red Berries Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- OREO -->
-
-        <div class="product-card">
-
-            <img
-                src="oreo-cheesecake.jpg"
-                alt="Oreo Cheesecake"
-                class="product-photo"
-            >
-
-            <h3>Oreo</h3>
-
-            <p>
-                A creamy cheesecake with an Oreo twist.
-            </p>
-
-            <span>Bs 35</span>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Oreo Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- CHOCOLATE -->
-
-        <div class="product-card">
-
-            <img
-                src="chocolate-cheesecake.jpg"
-                alt="Chocolate Cheesecake"
-                class="product-photo"
-            >
-
-            <h3>Chocolate</h3>
-
-            <p>
-                Rich and creamy chocolate cheesecake.
-            </p>
-
-            <span>Bs 35</span>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Chocolate Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- PISTACHIO -->
-
-        <div class="product-card">
-
-            <img
-                src="pistachio-cheesecake.jpg"
-                alt="Pistachio Cheesecake"
-                class="product-photo"
-            >
-
-            <h3>Pistachio</h3>
-
-            <p>
-                A smooth cheesecake with pistachio flavor.
-            </p>
-
-            <span>Bs 35</span>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Pistachio Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- PASSION FRUIT -->
-
-        <div class="product-card">
-
-            <img
-                src="passion-fruit-cheesecake.jpg"
-                alt="Passion Fruit Cheesecake"
-                class="product-photo"
-            >
-
-            <h3>Passion Fruit</h3>
-
-            <p>
-                A fresh and fruity cheesecake.
-            </p>
-
-            <span>Bs 35</span>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Passion Fruit Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- DULCE DE LECHE -->
-
-        <div class="product-card">
-
-            <img
-                src="dulce-de-leche-cheesecake.jpg"
-                alt="Dulce de Leche Cheesecake"
-                class="product-photo"
-            >
-
-            <h3>Dulce de Leche</h3>
-
-            <p>
-                Creamy cheesecake with dulce de leche.
-            </p>
-
-            <span>Bs 35</span>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Dulce de Leche Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- BASQUE -->
-
-        <div class="product-card">
-
-            <img
-                src="basque-cheesecake.jpg"
-                alt="Basque Cheesecake"
-                class="product-photo"
-            >
-
-            <h3>Basque</h3>
-
-            <p>
-                A beautifully caramelized Basque cheesecake.
-            </p>
-
-            <span>Bs 35</span>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Basque Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= OTHER DESSERTS ================= -->
-
-<section class="desserts">
-
-    <p class="small-title">MORE TO LOVE</p>
-
-    <h2>Our Desserts</h2>
-
-
-    <div class="dessert-list">
-
-
-        <!-- TARTS -->
-
-        <div class="dessert-card">
-
-            <img
-                src="tarts.jpg"
-                alt="Tarts"
-                class="dessert-photo"
-            >
-
-            <h3>Tarts</h3>
-
-            <p>
-                Delicious and beautifully presented tarts.
-            </p>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Tarts', 30)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- TIRAMISU -->
-
-        <div class="dessert-card">
-
-            <img
-                src="tiramisu.jpg"
-                alt="Tiramisu"
-                class="dessert-photo"
-            >
-
-            <h3>Tiramisu</h3>
-
-            <p>
-                A classic Italian dessert with our Lamecie touch.
-            </p>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Tiramisu', 30)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- CAKE -->
-
-        <div class="dessert-card">
-
-            <img
-                src="cake.jpg"
-                alt="Cake"
-                class="dessert-photo"
-            >
-
-            <h3>Cake</h3>
-
-            <p>
-                Beautiful cakes for everyday moments and celebrations.
-            </p>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Cake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-
-        <!-- PAVLOVA -->
-
-        <div class="dessert-card">
-
-            <img
-                src="pavlova.jpg"
-                alt="Pavlova"
-                class="dessert-photo"
-            >
-
-            <h3>Pavlova</h3>
-
-            <p>
-                Light, elegant, and delicious.
-            </p>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Pavlova', 30)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FEATURED ================= -->
-
-<section class="featured">
-
-    <p class="small-title">LIMITED EDITION</p>
-
-    <h2>Dessert of the Month</h2>
-
-    <p>
-        Every month, Lamecie will introduce something new,
-        creative, and delicious.
-    </p>
-
-    <button
-        class="button"
-        onclick="alert('Our first Dessert of the Month is coming soon! 🍰')"
-    >
-        Coming Soon
+    <a href="#home" class="logo">Lamecie</a>
+    <button class="menu-toggle" onclick="toggleMobileMenu()">
+        ☰
     </button>
-
-</section>
-
-
-<!-- ================= ORDER ================= -->
-
-<section id="orders" class="orders">
-
-    <p class="small-title">ORDER WITH US</p>
-
-    <h2>Make it yours.</h2>
-
-    <p>
-        Choose your favorite desserts and place an order
-        for pickup or delivery.
-    </p>
-
-
-    <form id="order-form" onsubmit="submitOrder(event)">
-
-        <input
-            type="text"
-            id="customer-name"
-            placeholder="Your name"
-            required
-        >
-
-        <select id="order-method" required>
-
-            <option value="">
-                Select pickup or delivery
-            </option>
-
-            <option value="Store Pickup">
-                Store Pickup
-            </option>
-
-            <option value="Delivery">
-                Delivery
-            </option>
-
-        </select>
-
-
-        <textarea
-            placeholder="Special instructions (optional)"
-            rows="4"
-        ></textarea>
-
-
-        <button
-            type="submit"
-            class="button"
-        >
-            Place Order
-        </button>
-
-    </form>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact">
-
-    <p class="small-title">COME VISIT US</p>
-
-    <h2>Lamecie Bakery</h2>
-
-    <p>
-        Equipetrol, Santa Cruz de la Sierra, Bolivia
-    </p>
-
-    <p>
-        Follow us on Instagram & TikTok
-    </p>
-
-</section>
-
-</main>
-
-
-<!-- ================= CART ================= -->
-
-<div id="cart-panel" class="cart-panel">
-
-    <div class="cart-header">
-
-        <h2>Your Order</h2>
-
-        <button onclick="closeCart()">
-            ✕
-        </button>
-
+    <div class="nav-links">
+        <a href="#home" data-en="Home" data-es="Inicio">Home</a>
+        <a href="#about" data-en="About Us" data-es="Nosotros">About Us</a>
+        <a href="#menu" data-en="Menu" data-es="Menú">Menu</a>
+        <a href="#drinks" data-en="Drinks" data-es="Bebidas">Drinks</a>
+        <a href="#orders" data-en="Order" data-es="Pedido">Order</a>
+        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
     </div>
-
-
-    <div id="cart-items">
-
-        <p class="empty-cart">
-            Your cart is empty 🍰
-        </p>
-
-    </div>
-
-
-    <div class="cart-footer">
-
-        <div class="cart-total-row">
-
-            <strong>Total</strong>
-
-            <strong id="cart-total">
-                Bs 0
-            </strong>
-
-        </div>
-
-        <button
-            class="button"
-            onclick="checkout()"
-        >
-            Continue to Order
+    <div class="language-switcher">
+        <button id="english-btn" class="active" onclick="setLanguage('en')">
+            🇺🇸 EN
         </button>
-
+        <button id="spanish-btn" onclick="setLanguage('es')">
+            🇪🇸 ES
+        </button>
     </div>
-
+    <button class="cart-button" onclick="openCart()">
+        🛍️ <span data-en="Cart" data-es="Carrito">Cart</span>
+        <span id="cart-count">0</span>
+    </button>
+</nav>
+</header>
+<main>
+<!-- ================= HOME ================= -->
+<section id="home" class="hero">
+<div class="hero-content">
+    <p class="small-title"
+       data-en="WELCOME TO LAMECIE"
+       data-es="BIENVENIDOS A LAMECIE">
+        WELCOME TO LAMECIE
+    </p>
+    <h1 data-en="Cheesecake<br>made special."
+        data-es="Cheesecake<br>hecho especial.">
+        Cheesecake<br>
+        made special.
+    </h1>
+    <p data-en="Classic flavors, innovative creations, and desserts made to make every moment sweeter."
+       data-es="Sabores clásicos, creaciones innovadoras y postres hechos para hacer cada momento más dulce.">
+        Classic flavors, innovative creations,
+        and desserts made to make every moment sweeter.
+    </p>
+    <a href="#menu"
+       class="button"
+       data-en="Explore Our Menu"
+       data-es="Explora Nuestro Menú">
+        Explore Our Menu
+    </a>
 </div>
-
-
-<div
-    id="cart-overlay"
-    class="cart-overlay"
-    onclick="closeCart()"
-></div>
-
-
+</section>
+<!-- ================= ABOUT ================= -->
+<section id="about" class="about">
+<div class="section-text">
+    <p class="small-title"
+       data-en="OUR STORY"
+       data-es="NUESTRA HISTORIA">
+        OUR STORY
+    </p>
+    <h2 data-en="More than just a bakery."
+        data-es="Más que una pastelería.">
+        More than just a bakery.
+    </h2>
+    <p data-en="Lamecie Bakery is a premium dessert bakery located in Equipetrol, Santa Cruz. We specialize in high-quality cheesecakes and innovative desserts."
+       data-es="Lamecie Bakery es una pastelería de postres premium ubicada en Equipetrol, Santa Cruz. Nos especializamos en cheesecakes de alta calidad y postres innovadores.">
+        Lamecie Bakery is a premium dessert bakery located in
+        Equipetrol, Santa Cruz. We specialize in high-quality
+        cheesecakes and innovative desserts.
+    </p>
+    <p data-en="Our goal is to create a beautiful, cozy, and welcoming environment where customers can enjoy delicious desserts and have a memorable experience."
+       data-es="Nuestro objetivo es crear un ambiente hermoso, acogedor y agradable donde los clientes puedan disfrutar de deliciosos postres y vivir una experiencia memorable.">
+        Our goal is to create a beautiful, cozy, and welcoming
+        environment where customers can enjoy delicious desserts
+        and have a memorable experience.
+    </p>
+    <p class="owners"
+       data-en="Created by Lara Torres, Maciel Nassar & Martina Guzman."
+       data-es="Creado por Lara Torres, Maciel Nassar y Martina Guzman.">
+        Created by Lara Torres, Maciel Nassar & Martina Guzman.
+    </p>
+</div>
+</section>
+<!-- ================= CHEESECAKES ================= -->
+<section id="menu" class="menu">
+<p class="small-title"
+   data-en="OUR SPECIALTY"
+   data-es="NUESTRA ESPECIALIDAD">
+    OUR SPECIALTY
+</p>
+<h2 data-en="Our Cheesecakes"
+    data-es="Nuestros Cheesecakes">
+    Our Cheesecakes
+</h2>
+<p class="menu-intro"
+   data-en="Our signature cheesecakes combine classic flavors with creative and innovative combinations."
+   data-es="Nuestros cheesecakes combinan sabores clásicos con combinaciones creativas e innovadoras.">
+    Our signature cheesecakes combine classic flavors with
+    creative and innovative combinations.
+</p>
+<div class="products">
+    <!-- CLASSIC -->
+    <div class="product-card">
+        <img src="classic-cheesecake.jpg"
+             alt="Classic Cheesecake"
+             class="product-photo">
+        <h3 data-en="Classic" data-es="Clásico">Classic</h3>
+        <p data-en="Our traditional creamy cheesecake."
+           data-es="Nuestro tradicional y cremoso cheesecake.">
+            Our traditional creamy cheesecake.
+        </p>
+        <span>Bs 35</span>
+        <button class="add-button"
+                onclick="addToCart('Classic Cheesecake', 35)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- RED BERRIES -->
+    <div class="product-card">
+        <img src="red-berries-cheesecake.jpg"
+             alt="Red Berries Cheesecake"
+             class="product-photo">
+        <h3 data-en="Red Berries" data-es="Frutos Rojos">
+            Red Berries
+        </h3>
+        <p data-en="Creamy cheesecake with delicious red berries."
+           data-es="Cremoso cheesecake con deliciosos frutos rojos.">
+            Creamy cheesecake with delicious red berries.
+        </p>
+        <span>Bs 35</span>
+        <button class="add-button"
+                onclick="addToCart('Red Berries Cheesecake', 35)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- OREO -->
+    <div class="product-card">
+        <img src="oreo-cheesecake.jpg"
+             alt="Oreo Cheesecake"
+             class="product-photo">
+        <h3>Oreo</h3>
+        <p data-en="A creamy cheesecake with an Oreo twist."
+           data-es="Un cremoso cheesecake con un toque de Oreo.">
+            A creamy cheesecake with an Oreo twist.
+        </p>
+        <span>Bs 35</span>
+        <button class="add-button"
+                onclick="addToCart('Oreo Cheesecake', 35)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- CHOCOLATE -->
+    <div class="product-card">
+        <img src="chocolate-cheesecake.jpg"
+             alt="Chocolate Cheesecake"
+             class="product-photo">
+        <h3 data-en="Chocolate" data-es="Chocolate">
+            Chocolate
+        </h3>
+        <p data-en="Rich and creamy chocolate cheesecake."
+           data-es="Cheesecake de chocolate rico y cremoso.">
+            Rich and creamy chocolate cheesecake.
+        </p>
+        <span>Bs 35</span>
+        <button class="add-button"
+                onclick="addToCart('Chocolate Cheesecake', 35)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- PISTACHIO -->
+    <div class="product-card">
+        <img src="pistachio-cheesecake.jpg"
+             alt="Pistachio Cheesecake"
+             class="product-photo">
+        <h3 data-en="Pistachio" data-es="Pistacho">
+            Pistachio
+        </h3>
+        <p data-en="A smooth cheesecake with pistachio flavor."
+           data-es="Un suave cheesecake con sabor a pistacho.">
+            A smooth cheesecake with pistachio flavor.
+        </p>
+        <span>Bs 35</span>
+        <button class="add-button"
+                onclick="addToCart('Pistachio Cheesecake', 35)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- PASSION FRUIT -->
+    <div class="product-card">
+        <img src="passion-fruit-cheesecake.jpg"
+             alt="Passion Fruit Cheesecake"
+             class="product-photo">
+        <h3 data-en="Passion Fruit" data-es="Maracuyá">
+            Passion Fruit
+        </h3>
+        <p data-en="A fresh and fruity cheesecake."
+           data-es="Un cheesecake fresco y frutal.">
+            A fresh and fruity cheesecake.
+        </p>
+        <span>Bs 35</span>
+        <button class="add-button"
+                onclick="addToCart('Passion Fruit Cheesecake', 35)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- DULCE DE LECHE -->
+    <div class="product-card">
+        <img src="dulce-de-leche-cheesecake.jpg"
+             alt="Dulce de Leche Cheesecake"
+             class="product-photo">
+        <h3>Dulce de Leche</h3>
+        <p data-en="Creamy cheesecake with dulce de leche."
+           data-es="Cremoso cheesecake con dulce de leche.">
+            Creamy cheesecake with dulce de leche.
+        </p>
+        <span>Bs 35</span>
+        <button class="add-button"
+                onclick="addToCart('Dulce de Leche Cheesecake', 35)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- BASQUE -->
+    <div class="product-card">
+        <img src="basque-cheesecake.jpg"
+             alt="Basque Cheesecake"
+             class="product-photo">
+        <h3>Basque</h3>
+        <p data-en="A beautifully caramelized Basque cheesecake."
+           data-es="Un hermoso cheesecake estilo Basque caramelizado.">
+            A beautifully caramelized Basque cheesecake.
+        </p>
+        <span>Bs 35</span>
+        <button class="add-button"
+                onclick="addToCart('Basque Cheesecake', 35)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+</div>
+</section>
+<!-- ================= OTHER DESSERTS ================= -->
+<section class="desserts">
+<p class="small-title"
+   data-en="MORE TO LOVE"
+   data-es="MÁS PARA DISFRUTAR">
+    MORE TO LOVE
+</p>
+<h2 data-en="Our Desserts"
+    data-es="Nuestros Postres">
+    Our Desserts
+</h2>
+<div class="dessert-list">
+    <!-- TARTS -->
+    <div class="dessert-card">
+        <img src="tarts.jpg"
+             alt="Tarts"
+             class="dessert-photo">
+        <h3 data-en="Tarts" data-es="Tartas">Tarts</h3>
+        <p data-en="Delicious and beautifully presented tarts."
+           data-es="Deliciosas tartas presentadas de forma hermosa.">
+            Delicious and beautifully presented tarts.
+        </p>
+        <span>Bs 30</span>
+        <button class="add-button"
+                onclick="addToCart('Tarts', 30)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- TIRAMISU -->
+    <div class="dessert-card">
+        <img src="tiramisu.jpg"
+             alt="Tiramisu"
+             class="dessert-photo">
+        <h3>Tiramisu</h3>
+        <p data-en="A classic Italian dessert with our Lamecie touch."
+           data-es="Un clásico postre italiano con el toque de Lamecie.">
+            A classic Italian dessert with our Lamecie touch.
+        </p>
+        <span>Bs 30</span>
+        <button class="add-button"
+                onclick="addToCart('Tiramisu', 30)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- CAKE -->
+    <div class="dessert-card">
+        <img src="cake.jpg"
+             alt="Cake"
+             class="dessert-photo">
+        <h3 data-en="Cake" data-es="Torta">Cake</h3>
+        <p data-en="Beautiful cakes for everyday moments and celebrations."
+           data-es="Hermosas tortas para momentos cotidianos y celebraciones.">
+            Beautiful cakes for everyday moments and celebrations.
+        </p>
+        <span>Bs 35</span>
+        <button class="add-button"
+                onclick="addToCart('Cake', 35)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- PAVLOVA -->
+    <div class="dessert-card">
+        <img src="pavlova.jpg"
+             alt="Pavlova"
+             class="dessert-photo">
+        <h3>Pavlova</h3>
+        <p data-en="Light, elegant, and delicious."
+           data-es="Ligera, elegante y deliciosa.">
+            Light, elegant, and delicious.
+        </p>
+        <span>Bs 30</span>
+        <button class="add-button"
+                onclick="addToCart('Pavlova', 30)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+</div>
+</section>
+<!-- ================= DRINKS ================= -->
+<section id="drinks" class="menu drinks-section">
+<p class="small-title"
+   data-en="DRINKS"
+   data-es="BEBIDAS">
+    DRINKS
+</p>
+<h2 data-en="Our Drinks"
+    data-es="Nuestras Bebidas">
+    Our Drinks
+</h2>
+<p class="menu-intro"
+   data-en="Complete your dessert experience with one of our delicious drinks."
+   data-es="Completa tu experiencia de postres con una de nuestras deliciosas bebidas.">
+    Complete your dessert experience with one of our delicious drinks.
+</p>
+<div class="products">
+    <!-- ESPRESSO -->
+    <div class="product-card">
+        <h3>Espresso</h3>
+        <p data-en="A classic, rich espresso."
+           data-es="Un clásico espresso intenso.">
+            A classic, rich espresso.
+        </p>
+        <span>Bs 10</span>
+        <button class="add-button"
+                onclick="addToCart('Espresso', 10)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- CAPPUCCINO -->
+    <div class="product-card">
+        <h3>Cappuccino</h3>
+        <p data-en="Smooth espresso with steamed milk and foam."
+           data-es="Espresso suave con leche vaporizada y espuma.">
+            Smooth espresso with steamed milk and foam.
+        </p>
+        <span>Bs 15</span>
+        <button class="add-button"
+                onclick="addToCart('Cappuccino', 15)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- HOT CHOCOLATE -->
+    <div class="product-card">
+        <h3 data-en="Hot Chocolate"
+            data-es="Chocolate Caliente">
+            Hot Chocolate
+        </h3>
+        <p data-en="Warm, creamy, and chocolatey."
+           data-es="Caliente, cremoso y lleno de chocolate.">
+            Warm, creamy, and chocolatey.
+        </p>
+        <span>Bs 15</span>
+        <button class="add-button"
+                onclick="addToCart('Hot Chocolate', 15)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- ICED LATTE -->
+    <div class="product-card">
+        <h3>Iced Latte</h3>
+        <p data-en="Chilled espresso with smooth milk."
+           data-es="Espresso frío con leche suave.">
+            Chilled espresso with smooth milk.
+        </p>
+        <span>Bs 20</span>
+        <div class="drink-options">
+            <label for="latte-essence"
+                   data-en="Choose your essence:"
+                   data-es="Elige tu esencia:">
+                Choose your essence:
+            </label>
+            <select id="latte-essence">
+                <option value="Caramel"
+                        data-en="Caramel"
+                        data-es="Caramelo">
+                    Caramel
+                </option>
+                <option value="Chocolate"
+                        data-en="Chocolate"
+                        data-es="Chocolate">
+                    Chocolate
+                </option>
+                <option value="Vanilla"
+                        data-en="Vanilla"
+                        data-es="Vainilla">
+                    Vanilla
+                </option>
+            </select>
+        </div>
+        <button class="add-button"
+                onclick="addIcedLatte()"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- ICED COFFEE -->
+    <div class="product-card">
+        <h3 data-en="Iced Coffee"
+            data-es="Café Frío">
+            Iced Coffee
+        </h3>
+        <p data-en="Refreshing cold coffee served over ice."
+           data-es="Café frío refrescante servido con hielo.">
+            Refreshing cold coffee served over ice.
+        </p>
+        <span>Bs 20</span>
+        <button class="add-button"
+                onclick="addToCart('Iced Coffee', 20)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+    <!-- ICED MATCHA -->
+    <div class="product-card">
+        <h3 data-en="Iced Matcha"
+            data-es="Matcha Frío">
+            Iced Matcha
+        </h3>
+        <p data-en="Smooth and refreshing iced matcha."
+           data-es="Matcha frío suave y refrescante.">
+            Smooth and refreshing iced matcha.
+        </p>
+        <span>Bs 20</span>
+        <button class="add-button"
+                onclick="addToCart('Iced Matcha', 20)"
+                data-en="+ Add to Order"
+                data-es="+ Agregar al Pedido">
+            + Add to Order
+        </button>
+    </div>
+</div>
+</section>
+<!-- ================= FEATURED ================= -->
+<section class="featured">
+<p class="small-title"
+   data-en="LIMITED EDITION"
+   data-es="EDICIÓN LIMITADA">
+    LIMITED EDITION
+</p>
+<h2 data-en="Dessert of the Month"
+    data-es="Postre del Mes">
+    Dessert of the Month
+</h2>
+<p data-en="Every month, Lamecie will introduce something new, creative, and delicious."
+   data-es="Cada mes, Lamecie presentará algo nuevo, creativo y delicioso.">
+    Every month, Lamecie will introduce something new,
+    creative, and delicious.
+</p>
+<button class="button"
+        onclick="showComingSoon()"
+        data-en="Coming Soon"
+        data-es="Próximamente">
+    Coming Soon
+</button>
+</section>
+<!-- ================= ORDER ================= -->
+<section id="orders" class="orders">
+<p class="small-title"
+   data-en="ORDER WITH US"
+   data-es="HAZ TU PEDIDO">
+    ORDER WITH US
+</p>
+<h2 data-en="Make it yours."
+    data-es="Hazlo tuyo.">
+    Make it yours.
+</h2>
+<p data-en="Choose your favorite desserts and place an order for pickup or delivery."
+   data-es="Elige tus postres favoritos y haz un pedido para recoger o recibir a domicilio.">
+    Choose your favorite desserts and place an order
+    for pickup or delivery.
+</p>
+<form id="order-form" onsubmit="submitOrder(event)">
+    <input
+        type="text"
+        id="customer-name"
+        placeholder="Your name"
+        data-placeholder-en="Your name"
+        data-placeholder-es="Tu nombre"
+        required
+    >
+    <select id="order-method" required>
+        <option value=""
+                data-en="Select pickup or delivery"
+                data-es="Selecciona recojo o delivery">
+            Select pickup or delivery
+        </option>
+        <option value="Store Pickup"
+                data-en="Store Pickup"
+                data-es="Recojo en tienda">
+            Store Pickup
+        </option>
+        <option value="Delivery"
+                data-en="Delivery"
+                data-es="Delivery">
+            Delivery
+        </option>
+    </select>
+    <textarea
+        id="special-instructions"
+        placeholder="Special instructions (optional)"
+        data-placeholder-en="Special instructions (optional)"
+        data-placeholder-es="Instrucciones especiales (opcional)"
+        rows="4"
+    ></textarea>
+    <button type="submit"
+            class="button"
+            data-en="Place Order"
+            data-es="Realizar Pedido">
+        Place Order
+    </button>
+</form>
+</section>
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+<p class="small-title"
+   data-en="COME VISIT US"
+   data-es="VISÍTANOS">
+    COME VISIT US
+</p>
+<h2>Lamecie Bakery</h2>
+<p>
+    Equipetrol, Santa Cruz de la Sierra, Bolivia
+</p>
+<p data-en="Follow us on Instagram & TikTok"
+   data-es="Síguenos en Instagram y TikTok">
+    Follow us on Instagram & TikTok
+</p>
+</section>
+</main>
+<!-- ================= CART ================= -->
+<div id="cart-panel" class="cart-panel">
+<div class="cart-header">
+    <h2 data-en="Your Order"
+        data-es="Tu Pedido">
+        Your Order
+    </h2>
+    <button onclick="closeCart()">
+        ✕
+    </button>
+</div>
+<div id="cart-items">
+    <p class="empty-cart"
+       data-en="Your cart is empty 🍰"
+       data-es="Tu carrito está vacío 🍰">
+        Your cart is empty 🍰
+    </p>
+</div>
+<div class="cart-footer">
+    <div class="cart-total-row">
+        <strong data-en="Total"
+                data-es="Total">
+            Total
+        </strong>
+        <strong id="cart-total">
+            Bs 0
+        </strong>
+    </div>
+    <button class="button"
+            onclick="checkout()"
+            data-en="Continue to Order"
+            data-es="Continuar al Pedido">
+        Continue to Order
+    </button>
+</div>
+</div>
+<div id="cart-overlay"
+     class="cart-overlay"
+     onclick="closeCart()">
+</div>
 <footer>
-
-    <p>
-        © 2026 Lamecie Bakery. All rights reserved.
-    </p>
-
-    <p>
-        Lara Torres · Maciel Nassar · Martina Guzman
-    </p>
-
+<p>
+    © 2026 Lamecie Bakery. All rights reserved.
+</p>
+<p>
+    Lara Torres · Maciel Nassar · Martina Guzman
+</p>
 </footer>
-
-
 <script src="script.js"></script>
-
+<script>
+/* ================= LANGUAGE SYSTEM ================= */
+let currentLanguage = "en";
+function setLanguage(language) {
+    currentLanguage = language;
+    document.documentElement.lang = language;
+    const elements = document.querySelectorAll("[data-en]");
+    elements.forEach(element => {
+        if (element.tagName === "OPTION") {
+            element.textContent = element.getAttribute("data-" + language);
+        }
+        else if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+            const placeholder = element.getAttribute("data-placeholder-" + language);
+            if (placeholder) {
+                element.placeholder = placeholder;
+            }
+        }
+        else {
+            element.innerHTML = element.getAttribute("data-" + language);
+        }
+    });
+    document.getElementById("english-btn")
+        .classList.toggle("active", language === "en");
+    document.getElementById("spanish-btn")
+        .classList.toggle("active", language === "es");
+}
+/* ================= ICED LATTE ================= */
+function addIcedLatte() {
+    const essence =
+        document.getElementById("latte-essence").value;
+    const name =
+        "Iced Latte - " + essence;
+    addToCart(name, 20);
+}
+/* ================= COMING SOON ================= */
+function showComingSoon() {
+    if (currentLanguage === "es") {
+        alert("¡Nuestro primer Postre del Mes llegará pronto! 🍰");
+    } else {
+        alert("Our first Dessert of the Month is coming soon! 🍰");
+    }
+}
+/* Start in English */
+setLanguage("en");
+</script>
 </body>
 </html>
