@@ -3,249 +3,636 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Lamecie Bakery</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">Lamecie</div>
+<header>
+    <nav>
 
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About Us</a>
-                <a href="#menu">Menu</a>
-                <a href="#orders">Order Online</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
-    </header>
+        <a href="#home" class="logo">Lamecie</a>
 
-    <main>
+        <button class="menu-toggle" onclick="toggleMobileMenu()">
+            ☰
+        </button>
 
-        <!-- HERO SECTION -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <p class="small-title">WELCOME TO LAMECIE</p>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#orders">Order</a>
+            <a href="#contact">Contact</a>
+        </div>
 
-                <h1>Cheesecake<br>made special.</h1>
+        <button class="cart-button" onclick="openCart()">
+            🛍️ Cart
+            <span id="cart-count">0</span>
+        </button>
 
-                <p>
-                    Classic flavors, innovative creations,
-                    and desserts made to make every moment sweeter.
-                </p>
-
-                <a href="#menu" class="button">Explore Our Menu</a>
-            </div>
-        </section>
+    </nav>
+</header>
 
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="about">
-            <div class="section-text">
-                <p class="small-title">OUR STORY</p>
+<main>
 
-                <h2>More than just a bakery.</h2>
+<!-- ================= HOME ================= -->
 
-                <p>
-                    Lamecie Bakery is a dessert shop specializing in
-                    cheesecakes and offering a variety of classic and
-                    innovative flavors.
-                </p>
+<section id="home" class="hero">
 
-                <p>
-                    Our goal is to create a beautiful, cozy, and welcoming
-                    environment where customers can enjoy high-quality
-                    desserts and have a memorable experience.
-                </p>
+    <div class="hero-content">
 
-                <p class="owners">
-                    Created by Lara Torres, Maciel Nassar & Martina Guzman.
-                </p>
-            </div>
-        </section>
+        <p class="small-title">WELCOME TO LAMECIE</p>
+
+        <h1>
+            Cheesecake<br>
+            made special.
+        </h1>
+
+        <p>
+            Classic flavors, innovative creations,
+            and desserts made to make every moment sweeter.
+        </p>
+
+        <a href="#menu" class="button">
+            Explore Our Menu
+        </a>
+
+    </div>
+
+</section>
 
 
-        <!-- CHEESECAKE SECTION -->
-        <section id="menu" class="menu">
+<!-- ================= ABOUT ================= -->
 
-            <p class="small-title">OUR SPECIALTY</p>
+<section id="about" class="about">
 
-            <h2>Cheesecakes</h2>
+    <div class="section-text">
 
-            <p class="menu-intro">
-                Our signature cheesecakes are available in classic
-                and innovative flavors.
+        <p class="small-title">OUR STORY</p>
+
+        <h2>More than just a bakery.</h2>
+
+        <p>
+            Lamecie Bakery is a premium dessert bakery located in
+            Equipetrol, Santa Cruz. We specialize in high-quality
+            cheesecakes and innovative desserts.
+        </p>
+
+        <p>
+            Our goal is to create a beautiful, cozy, and welcoming
+            environment where customers can enjoy delicious desserts
+            and have a memorable experience.
+        </p>
+
+        <p class="owners">
+            Created by Lara Torres, Maciel Nassar & Martina Guzman.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CHEESECAKES ================= -->
+
+<section id="menu" class="menu">
+
+    <p class="small-title">OUR SPECIALTY</p>
+
+    <h2>Our Cheesecakes</h2>
+
+    <p class="menu-intro">
+        Our signature cheesecakes combine classic flavors with
+        creative and innovative combinations.
+    </p>
+
+
+    <div class="products">
+
+
+        <!-- CLASSIC -->
+
+        <div class="product-card">
+
+            <img
+                src="classic-cheesecake.jpg"
+                alt="Classic Cheesecake"
+                class="product-photo"
+            >
+
+            <h3>Classic</h3>
+
+            <p>
+                Our traditional creamy cheesecake.
             </p>
 
-            <div class="products">
+            <span>Bs 35</span>
 
-                <div class="product-card">
-    <img
-        src="classic-cheesecake.jpg"
-        alt="Classic Cheesecake"
-        class="product-photo"
-    >
+            <button
+                class="add-button"
+                onclick="addToCart('Classic Cheesecake', 35)"
+            >
+                + Add to Order
+            </button>
 
-    <h3>Classic</h3>
+        </div>
 
-    <p>Our traditional creamy cheesecake.</p>
 
-    <span>Bs 35</span>
+        <!-- RED BERRIES -->
+
+        <div class="product-card">
+
+            <img
+                src="red-berries-cheesecake.jpg"
+                alt="Red Berries Cheesecake"
+                class="product-photo"
+            >
+
+            <h3>Red Berries</h3>
+
+            <p>
+                Creamy cheesecake with delicious red berries.
+            </p>
+
+            <span>Bs 35</span>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Red Berries Cheesecake', 35)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- OREO -->
+
+        <div class="product-card">
+
+            <img
+                src="oreo-cheesecake.jpg"
+                alt="Oreo Cheesecake"
+                class="product-photo"
+            >
+
+            <h3>Oreo</h3>
+
+            <p>
+                A creamy cheesecake with an Oreo twist.
+            </p>
+
+            <span>Bs 35</span>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Oreo Cheesecake', 35)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- CHOCOLATE -->
+
+        <div class="product-card">
+
+            <img
+                src="chocolate-cheesecake.jpg"
+                alt="Chocolate Cheesecake"
+                class="product-photo"
+            >
+
+            <h3>Chocolate</h3>
+
+            <p>
+                Rich and creamy chocolate cheesecake.
+            </p>
+
+            <span>Bs 35</span>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Chocolate Cheesecake', 35)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- PISTACHIO -->
+
+        <div class="product-card">
+
+            <img
+                src="pistachio-cheesecake.jpg"
+                alt="Pistachio Cheesecake"
+                class="product-photo"
+            >
+
+            <h3>Pistachio</h3>
+
+            <p>
+                A smooth cheesecake with pistachio flavor.
+            </p>
+
+            <span>Bs 35</span>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Pistachio Cheesecake', 35)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- PASSION FRUIT -->
+
+        <div class="product-card">
+
+            <img
+                src="passion-fruit-cheesecake.jpg"
+                alt="Passion Fruit Cheesecake"
+                class="product-photo"
+            >
+
+            <h3>Passion Fruit</h3>
+
+            <p>
+                A fresh and fruity cheesecake.
+            </p>
+
+            <span>Bs 35</span>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Passion Fruit Cheesecake', 35)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- DULCE DE LECHE -->
+
+        <div class="product-card">
+
+            <img
+                src="dulce-de-leche-cheesecake.jpg"
+                alt="Dulce de Leche Cheesecake"
+                class="product-photo"
+            >
+
+            <h3>Dulce de Leche</h3>
+
+            <p>
+                Creamy cheesecake with dulce de leche.
+            </p>
+
+            <span>Bs 35</span>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Dulce de Leche Cheesecake', 35)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- BASQUE -->
+
+        <div class="product-card">
+
+            <img
+                src="basque-cheesecake.jpg"
+                alt="Basque Cheesecake"
+                class="product-photo"
+            >
+
+            <h3>Basque</h3>
+
+            <p>
+                A beautifully caramelized Basque cheesecake.
+            </p>
+
+            <span>Bs 35</span>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Basque Cheesecake', 35)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OTHER DESSERTS ================= -->
+
+<section class="desserts">
+
+    <p class="small-title">MORE TO LOVE</p>
+
+    <h2>Our Desserts</h2>
+
+
+    <div class="dessert-list">
+
+
+        <!-- TARTS -->
+
+        <div class="dessert-card">
+
+            <img
+                src="tarts.jpg"
+                alt="Tarts"
+                class="dessert-photo"
+            >
+
+            <h3>Tarts</h3>
+
+            <p>
+                Delicious and beautifully presented tarts.
+            </p>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Tarts', 30)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- TIRAMISU -->
+
+        <div class="dessert-card">
+
+            <img
+                src="tiramisu.jpg"
+                alt="Tiramisu"
+                class="dessert-photo"
+            >
+
+            <h3>Tiramisu</h3>
+
+            <p>
+                A classic Italian dessert with our Lamecie touch.
+            </p>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Tiramisu', 30)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- CAKE -->
+
+        <div class="dessert-card">
+
+            <img
+                src="cake.jpg"
+                alt="Cake"
+                class="dessert-photo"
+            >
+
+            <h3>Cake</h3>
+
+            <p>
+                Beautiful cakes for everyday moments and celebrations.
+            </p>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Cake', 35)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- PAVLOVA -->
+
+        <div class="dessert-card">
+
+            <img
+                src="pavlova.jpg"
+                alt="Pavlova"
+                class="dessert-photo"
+            >
+
+            <h3>Pavlova</h3>
+
+            <p>
+                Light, elegant, and delicious.
+            </p>
+
+            <button
+                class="add-button"
+                onclick="addToCart('Pavlova', 30)"
+            >
+                + Add to Order
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURED ================= -->
+
+<section class="featured">
+
+    <p class="small-title">LIMITED EDITION</p>
+
+    <h2>Dessert of the Month</h2>
+
+    <p>
+        Every month, Lamecie will introduce something new,
+        creative, and delicious.
+    </p>
 
     <button
-        class="add-button"
-        onclick="addToCart('Classic Cheesecake', 35)">
-        + Add to Order
+        class="button"
+        onclick="alert('Our first Dessert of the Month is coming soon! 🍰')"
+    >
+        Coming Soon
     </button>
+
+</section>
+
+
+<!-- ================= ORDER ================= -->
+
+<section id="orders" class="orders">
+
+    <p class="small-title">ORDER WITH US</p>
+
+    <h2>Make it yours.</h2>
+
+    <p>
+        Choose your favorite desserts and place an order
+        for pickup or delivery.
+    </p>
+
+
+    <form id="order-form" onsubmit="submitOrder(event)">
+
+        <input
+            type="text"
+            id="customer-name"
+            placeholder="Your name"
+            required
+        >
+
+        <select id="order-method" required>
+
+            <option value="">
+                Select pickup or delivery
+            </option>
+
+            <option value="Store Pickup">
+                Store Pickup
+            </option>
+
+            <option value="Delivery">
+                Delivery
+            </option>
+
+        </select>
+
+
+        <textarea
+            placeholder="Special instructions (optional)"
+            rows="4"
+        ></textarea>
+
+
+        <button
+            type="submit"
+            class="button"
+        >
+            Place Order
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+    <p class="small-title">COME VISIT US</p>
+
+    <h2>Lamecie Bakery</h2>
+
+    <p>
+        Equipetrol, Santa Cruz de la Sierra, Bolivia
+    </p>
+
+    <p>
+        Follow us on Instagram & TikTok
+    </p>
+
+</section>
+
+</main>
+
+
+<!-- ================= CART ================= -->
+
+<div id="cart-panel" class="cart-panel">
+
+    <div class="cart-header">
+
+        <h2>Your Order</h2>
+
+        <button onclick="closeCart()">
+            ✕
+        </button>
+
+    </div>
+
+
+    <div id="cart-items">
+
+        <p class="empty-cart">
+            Your cart is empty 🍰
+        </p>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-total-row">
+
+            <strong>Total</strong>
+
+            <strong id="cart-total">
+                Bs 0
+            </strong>
+
+        </div>
+
+        <button
+            class="button"
+            onclick="checkout()"
+        >
+            Continue to Order
+        </button>
+
+    </div>
+
 </div>
 
-                <div class="product-card">
-                    <div class="product-image">🍓</div>
-                    <h3>Red Berries</h3>
-                    <p>Creamy cheesecake with delicious red berries.</p>
-                    <span>Bs 25</span>
-                </div>
 
-                <div class="product-card">
-                    <div class="product-image">🍪</div>
-                    <h3>Oreo</h3>
-                    <p>A creamy cheesecake with an Oreo twist.</p>
-                    <span>Bs 25</span>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">🍫</div>
-                    <h3>Chocolate</h3>
-                    <p>Rich and creamy chocolate cheesecake.</p>
-                    <span>Bs 25</span>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">💚</div>
-                    <h3>Pistachio</h3>
-                    <p>A smooth cheesecake with pistachio flavor.</p>
-                    <span>Bs 25</span>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">🥭</div>
-                    <h3>Passion Fruit</h3>
-                    <p>A fresh and fruity cheesecake.</p>
-                    <span>Bs 25</span>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">🍯</div>
-                    <h3>Dulce de Leche</h3>
-                    <p>Creamy cheesecake with dulce de leche.</p>
-                    <span>Bs 25</span>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">✨</div>
-                    <h3>Basque</h3>
-                    <p>A beautifully caramelized Basque cheesecake.</p>
-                    <span>Bs 25</span>
-                </div>
-
-            </div>
-        </section>
+<div
+    id="cart-overlay"
+    class="cart-overlay"
+    onclick="closeCart()"
+></div>
 
 
-        <!-- OTHER DESSERTS -->
-        <section class="desserts">
+<footer>
 
-            <p class="small-title">MORE TO LOVE</p>
+    <p>
+        © 2026 Lamecie Bakery. All rights reserved.
+    </p>
 
-            <h2>Our Desserts</h2>
+    <p>
+        Lara Torres · Maciel Nassar · Martina Guzman
+    </p>
 
-            <div class="dessert-list">
-
-                <div>
-                    <h3>Pies & Tarts</h3>
-                    <p>Delicious desserts made for every occasion.</p>
-                </div>
-
-                <div>
-                    <h3>Tiramisu</h3>
-                    <p>A classic dessert with our Lamecie touch.</p>
-                </div>
-
-                <div>
-                    <h3>Cakes</h3>
-                    <p>Classic and customized cakes for special moments.</p>
-                </div>
-
-                <div>
-                    <h3>Pavlova</h3>
-                    <p>Light, elegant, and delicious.</p>
-                </div>
-
-            </div>
-
-        </section>
+</footer>
 
 
-        <!-- DESSERT OF THE MONTH -->
-        <section class="featured">
-
-            <p class="small-title">LIMITED EDITION</p>
-
-            <h2>Dessert of the Month</h2>
-
-            <p>
-                Every month, we will introduce something new,
-                creative, and delicious for our customers to try.
-            </p>
-
-            <button class="button">Coming Soon</button>
-
-        </section>
-
-
-        <!-- ORDER SECTION -->
-        <section id="orders" class="orders">
-
-            <p class="small-title">ORDER WITH US</p>
-
-            <h2>Make it yours.</h2>
-
-            <p>
-                Order your favorite Lamecie desserts for pickup,
-                delivery, or special occasions.
-            </p>
-
-            <div class="order-buttons">
-                <a href="#" class="button">Order Online</a>
-                <a href="#" class="button secondary">Custom Orders</a>
-            </div>
-
-        </section>
-
-
-        <!-- CONTACT -->
-        <section id="contact" class="contact">
-
-            <p class="small-title">COME VISIT US</p>
-
-            <h2>Lamecie Bakery</h2>
-
-            <p>Equipetrol, Santa Cruz de la Sierra, Bolivia</p>
-
-            <p>Follow us on Instagram & TikTok</p>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-        <p>© 2026 Lamecie Bakery. All rights reserved.</p>
-        <p>Made with love by Lara, Maciel & Martina.</p>
-    </footer>
 <script src="script.js"></script>
+
 </body>
 </html>
