@@ -1,633 +1,766 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Lamecie Bakery</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lamecie Bakery</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <nav>
+<nav>
+<a href="#home" class="logo">Lamecie</a>
 
-        <a href="#home" class="logo">Lamecie</a>
+<button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
-        <button class="menu-toggle" onclick="toggleMobileMenu()">
-            ☰
-        </button>
+<div class="nav-links">
+<a href="#home" data-i18n="navHome">Home</a>
+<a href="#about" data-i18n="navAbout">About Us</a>
+<a href="#menu" data-i18n="navMenu">Menu</a>
+<a href="#drinks" data-i18n="navDrinks">Drinks</a>
+<a href="#orders" data-i18n="navOrder">Order</a>
+<a href="#contact" data-i18n="navContact">Contact</a>
+</div>
 
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#menu">Menu</a>
-            <a href="#orders">Order</a>
-            <a href="#contact">Contact</a>
-        </div>
+<div class="language-switch">
+<button onclick="setLanguage('en')" id="en-btn">EN</button>
+<button onclick="setLanguage('es')" id="es-btn">ES</button>
+</div>
 
-        <button class="cart-button" onclick="openCart()">
-            🛍️ Cart
-            <span id="cart-count">0</span>
-        </button>
-
-    </nav>
+<button class="cart-button" onclick="openCart()">
+🛍️ <span data-i18n="cart">Cart</span>
+<span id="cart-count">0</span>
+</button>
+</nav>
 </header>
-
 
 <main>
 
-<!-- ================= HOME ================= -->
-
 <section id="home" class="hero">
+<div class="hero-content">
 
-    <div class="hero-content">
+<p class="small-title" data-i18n="welcome">
+WELCOME TO LAMECIE
+</p>
 
-        <p class="small-title">WELCOME TO LAMECIE</p>
+<h1 data-i18n="heroTitle">
+Cheesecake<br>made special.
+</h1>
 
-        <h1>
-            Cheesecake<br>
-            made special.
-        </h1>
+<p data-i18n="heroText">
+Classic flavors, innovative creations, and desserts made to make every moment sweeter.
+</p>
 
-        <p>
-            Classic flavors, innovative creations,
-            and desserts made to make every moment sweeter.
-        </p>
+<a href="#menu" class="button" data-i18n="explore">
+Explore Our Menu
+</a>
 
-        <a href="#menu" class="button">
-            Explore Our Menu
-        </a>
-
-    </div>
-
+</div>
 </section>
 
-
-<!-- ================= ABOUT ================= -->
 
 <section id="about" class="about">
 
-    <div class="section-text">
+<div class="section-text">
 
-        <p class="small-title">OUR STORY</p>
+<p class="small-title" data-i18n="ourStory">
+OUR STORY
+</p>
 
-        <h2>More than just a bakery.</h2>
+<h2 data-i18n="aboutTitle">
+More than just a bakery.
+</h2>
 
-        <p>
-            Lamecie Bakery is a premium dessert bakery located in
-            Equipetrol, Santa Cruz. We specialize in high-quality
-            cheesecakes and innovative desserts.
-        </p>
+<p data-i18n="aboutText1">
+Lamecie Bakery is a premium dessert bakery located in Equipetrol, Santa Cruz. We specialize in high-quality cheesecakes and innovative desserts.
+</p>
 
-        <p>
-            Our goal is to create a beautiful, cozy, and welcoming
-            environment where customers can enjoy delicious desserts
-            and have a memorable experience.
-        </p>
+<p data-i18n="aboutText2">
+Our goal is to create a beautiful, cozy, and welcoming environment where customers can enjoy delicious desserts and have a memorable experience.
+</p>
 
-        <p class="owners">
-            Created by Lara Torres, Maciel Nassar & Martina Guzman.
-        </p>
+<p class="owners" data-i18n="owners">
+Created by Lara Torres, Maciel Nassar & Martina Guzman.
+</p>
 
-    </div>
-
+</div>
 </section>
 
-
-<!-- ================= CHEESECAKES ================= -->
 
 <section id="menu" class="menu">
 
-    <p class="small-title">OUR SPECIALTY</p>
+<p class="small-title" data-i18n="specialty">
+OUR SPECIALTY
+</p>
 
-    <h2>Our Cheesecakes</h2>
+<h2 data-i18n="cheesecakes">
+Our Cheesecakes
+</h2>
 
-    <p class="menu-intro">
-        Our signature cheesecakes combine classic flavors with
-        creative and innovative combinations.
-    </p>
+<p class="menu-intro" data-i18n="cheesecakeIntro">
+Our signature cheesecakes combine classic flavors with creative and innovative combinations.
+</p>
 
+<div class="products">
 
-    <div class="products">
 
+<div class="product-card">
 
-        <!-- CLASSIC -->
+<img src="classic-cheesecake.jpg"
+alt="Classic Cheesecake"
+class="product-photo">
 
-        <div class="product-card">
+<h3 data-i18n="classic">Classic</h3>
 
-            <img
-                src="classic-cheesecake.jpg"
-                alt="Classic Cheesecake"
-                class="product-photo"
-            >
+<p data-i18n="classicDesc">
+Our traditional creamy cheesecake.
+</p>
 
-            <h3>Classic</h3>
+<span>Bs 35</span>
 
-            <p>
-                Our traditional creamy cheesecake.
-            </p>
+<button class="add-button"
+onclick="addToCart('Classic Cheesecake',35)"
+data-i18n="add">
++ Add to Order
+</button>
 
-            <span>Bs 35</span>
+</div>
 
-            <button
-                class="add-button"
-                onclick="addToCart('Classic Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
 
-        </div>
+<div class="product-card">
 
+<img src="red-berries-cheesecake.jpg"
+alt="Red Berries Cheesecake"
+class="product-photo">
 
-        <!-- RED BERRIES -->
+<h3 data-i18n="redBerries">
+Red Berries
+</h3>
 
-        <div class="product-card">
+<p data-i18n="redBerriesDesc">
+Creamy cheesecake with delicious red berries.
+</p>
 
-            <img
-                src="red-berries-cheesecake.jpg"
-                alt="Red Berries Cheesecake"
-                class="product-photo"
-            >
+<span>Bs 35</span>
 
-            <h3>Red Berries</h3>
+<button class="add-button"
+onclick="addToCart('Red Berries Cheesecake',35)"
+data-i18n="add">
++ Add to Order
+</button>
 
-            <p>
-                Creamy cheesecake with delicious red berries.
-            </p>
+</div>
 
-            <span>Bs 35</span>
 
-            <button
-                class="add-button"
-                onclick="addToCart('Red Berries Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
+<div class="product-card">
 
-        </div>
+<img src="oreo-cheesecake.jpg"
+alt="Oreo Cheesecake"
+class="product-photo">
 
+<h3>Oreo</h3>
 
-        <!-- OREO -->
+<p data-i18n="oreoDesc">
+A creamy cheesecake with an Oreo twist.
+</p>
 
-        <div class="product-card">
+<span>Bs 35</span>
 
-            <img
-                src="oreo-cheesecake.jpg"
-                alt="Oreo Cheesecake"
-                class="product-photo"
-            >
+<button class="add-button"
+onclick="addToCart('Oreo Cheesecake',35)"
+data-i18n="add">
++ Add to Order
+</button>
 
-            <h3>Oreo</h3>
+</div>
 
-            <p>
-                A creamy cheesecake with an Oreo twist.
-            </p>
 
-            <span>Bs 35</span>
+<div class="product-card">
 
-            <button
-                class="add-button"
-                onclick="addToCart('Oreo Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
+<img src="chocolate-cheesecake.jpg"
+alt="Chocolate Cheesecake"
+class="product-photo">
 
-        </div>
+<h3 data-i18n="chocolate">
+Chocolate
+</h3>
 
+<p data-i18n="chocolateDesc">
+Rich and creamy chocolate cheesecake.
+</p>
 
-        <!-- CHOCOLATE -->
+<span>Bs 35</span>
 
-        <div class="product-card">
+<button class="add-button"
+onclick="addToCart('Chocolate Cheesecake',35)"
+data-i18n="add">
++ Add to Order
+</button>
 
-            <img
-                src="chocolate-cheesecake.jpg"
-                alt="Chocolate Cheesecake"
-                class="product-photo"
-            >
+</div>
 
-            <h3>Chocolate</h3>
 
-            <p>
-                Rich and creamy chocolate cheesecake.
-            </p>
+<div class="product-card">
 
-            <span>Bs 35</span>
+<img src="pistachio-cheesecake.jpg"
+alt="Pistachio Cheesecake"
+class="product-photo">
 
-            <button
-                class="add-button"
-                onclick="addToCart('Chocolate Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
+<h3 data-i18n="pistachio">
+Pistachio
+</h3>
 
-        </div>
+<p data-i18n="pistachioDesc">
+A smooth cheesecake with pistachio flavor.
+</p>
 
+<span>Bs 35</span>
 
-        <!-- PISTACHIO -->
+<button class="add-button"
+onclick="addToCart('Pistachio Cheesecake',35)"
+data-i18n="add">
++ Add to Order
+</button>
 
-        <div class="product-card">
+</div>
 
-            <img
-                src="pistachio-cheesecake.jpg"
-                alt="Pistachio Cheesecake"
-                class="product-photo"
-            >
 
-            <h3>Pistachio</h3>
+<div class="product-card">
 
-            <p>
-                A smooth cheesecake with pistachio flavor.
-            </p>
+<img src="passion-fruit-cheesecake.jpg"
+alt="Passion Fruit Cheesecake"
+class="product-photo">
 
-            <span>Bs 35</span>
+<h3 data-i18n="passion">
+Passion Fruit
+</h3>
 
-            <button
-                class="add-button"
-                onclick="addToCart('Pistachio Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
+<p data-i18n="passionDesc">
+A fresh and fruity cheesecake.
+</p>
 
-        </div>
+<span>Bs 35</span>
 
+<button class="add-button"
+onclick="addToCart('Passion Fruit Cheesecake',35)"
+data-i18n="add">
++ Add to Order
+</button>
 
-        <!-- PASSION FRUIT -->
+</div>
 
-        <div class="product-card">
 
-            <img
-                src="passion-fruit-cheesecake.jpg"
-                alt="Passion Fruit Cheesecake"
-                class="product-photo"
-            >
+<div class="product-card">
 
-            <h3>Passion Fruit</h3>
+<img src="dulce-de-leche-cheesecake.jpg"
+alt="Dulce de Leche Cheesecake"
+class="product-photo">
 
-            <p>
-                A fresh and fruity cheesecake.
-            </p>
+<h3 data-i18n="dulce">
+Dulce de Leche
+</h3>
 
-            <span>Bs 35</span>
+<p data-i18n="dulceDesc">
+Creamy cheesecake with dulce de leche.
+</p>
 
-            <button
-                class="add-button"
-                onclick="addToCart('Passion Fruit Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
+<span>Bs 35</span>
 
-        </div>
+<button class="add-button"
+onclick="addToCart('Dulce de Leche Cheesecake',35)"
+data-i18n="add">
++ Add to Order
+</button>
 
+</div>
 
-        <!-- DULCE DE LECHE -->
 
-        <div class="product-card">
+<div class="product-card">
 
-            <img
-                src="dulce-de-leche-cheesecake.jpg"
-                alt="Dulce de Leche Cheesecake"
-                class="product-photo"
-            >
+<img src="basque-cheesecake.jpg"
+alt="Basque Cheesecake"
+class="product-photo">
 
-            <h3>Dulce de Leche</h3>
+<h3>Basque</h3>
 
-            <p>
-                Creamy cheesecake with dulce de leche.
-            </p>
+<p data-i18n="basqueDesc">
+A beautifully caramelized Basque cheesecake.
+</p>
 
-            <span>Bs 35</span>
+<span>Bs 35</span>
 
-            <button
-                class="add-button"
-                onclick="addToCart('Dulce de Leche Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
+<button class="add-button"
+onclick="addToCart('Basque Cheesecake',35)"
+data-i18n="add">
++ Add to Order
+</button>
 
-        </div>
+</div>
 
-
-        <!-- BASQUE -->
-
-        <div class="product-card">
-
-            <img
-                src="basque-cheesecake.jpg"
-                alt="Basque Cheesecake"
-                class="product-photo"
-            >
-
-            <h3>Basque</h3>
-
-            <p>
-                A beautifully caramelized Basque cheesecake.
-            </p>
-
-            <span>Bs 35</span>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Basque Cheesecake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
-
-    </div>
-
+</div>
 </section>
 
-
-<!-- ================= OTHER DESSERTS ================= -->
 
 <section class="desserts">
 
-    <p class="small-title">MORE TO LOVE</p>
+<p class="small-title" data-i18n="moreLove">
+MORE TO LOVE
+</p>
 
-    <h2>Our Desserts</h2>
+<h2 data-i18n="desserts">
+Our Desserts
+</h2>
 
-
-    <div class="dessert-list">
-
-
-        <!-- TARTS -->
-
-        <div class="dessert-card">
-
-            <img
-                src="tarts.jpg"
-                alt="Tarts"
-                class="dessert-photo"
-            >
-
-            <h3>Tarts</h3>
-
-            <p>
-                Delicious and beautifully presented tarts.
-            </p>
-
-            <button
-                class="add-button"
-                onclick="addToCart('Tarts', 30)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
+<div class="dessert-list">
 
 
-        <!-- TIRAMISU -->
+<div class="dessert-card">
 
-        <div class="dessert-card">
+<img src="tarts.jpg"
+alt="Tarts"
+class="dessert-photo">
 
-            <img
-                src="tiramisu.jpg"
-                alt="Tiramisu"
-                class="dessert-photo"
-            >
+<h3 data-i18n="tarts">
+Tarts
+</h3>
 
-            <h3>Tiramisu</h3>
+<p data-i18n="tartsDesc">
+Delicious and beautifully presented tarts.
+</p>
 
-            <p>
-                A classic Italian dessert with our Lamecie touch.
-            </p>
+<button class="add-button"
+onclick="addToCart('Tarts',30)"
+data-i18n="add">
++ Add to Order
+</button>
 
-            <button
-                class="add-button"
-                onclick="addToCart('Tiramisu', 30)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
+</div>
 
 
-        <!-- CAKE -->
+<div class="dessert-card">
 
-        <div class="dessert-card">
+<img src="tiramisu.jpg"
+alt="Tiramisu"
+class="dessert-photo">
 
-            <img
-                src="cake.jpg"
-                alt="Cake"
-                class="dessert-photo"
-            >
+<h3>Tiramisu</h3>
 
-            <h3>Cake</h3>
+<p data-i18n="tiramisuDesc">
+A classic Italian dessert with our Lamecie touch.
+</p>
 
-            <p>
-                Beautiful cakes for everyday moments and celebrations.
-            </p>
+<button class="add-button"
+onclick="addToCart('Tiramisu',30)"
+data-i18n="add">
++ Add to Order
+</button>
 
-            <button
-                class="add-button"
-                onclick="addToCart('Cake', 35)"
-            >
-                + Add to Order
-            </button>
-
-        </div>
+</div>
 
 
-        <!-- PAVLOVA -->
+<div class="dessert-card">
 
-        <div class="dessert-card">
+<img src="cake.jpg"
+alt="Cake"
+class="dessert-photo">
 
-            <img
-                src="pavlova.jpg"
-                alt="Pavlova"
-                class="dessert-photo"
-            >
+<h3 data-i18n="cake">
+Cake
+</h3>
 
-            <h3>Pavlova</h3>
+<p data-i18n="cakeDesc">
+Beautiful cakes for everyday moments and celebrations.
+</p>
 
-            <p>
-                Light, elegant, and delicious.
-            </p>
+<button class="add-button"
+onclick="addToCart('Cake',35)"
+data-i18n="add">
++ Add to Order
+</button>
 
-            <button
-                class="add-button"
-                onclick="addToCart('Pavlova', 30)"
-            >
-                + Add to Order
-            </button>
+</div>
 
-        </div>
 
-    </div>
+<div class="dessert-card">
 
+<img src="pavlova.jpg"
+alt="Pavlova"
+class="dessert-photo">
+
+<h3>Pavlova</h3>
+
+<p data-i18n="pavlovaDesc">
+Light, elegant, and delicious.
+</p>
+
+<button class="add-button"
+onclick="addToCart('Pavlova',30)"
+data-i18n="add">
++ Add to Order
+</button>
+
+</div>
+
+</div>
 </section>
 
 
-<!-- ================= FEATURED ================= -->
+<section id="drinks" class="menu">
+
+<p class="small-title" data-i18n="drinksTitleSmall">
+SIP SOMETHING SPECIAL
+</p>
+
+<h2 data-i18n="drinksTitle">
+Our Drinks
+</h2>
+
+<p class="menu-intro" data-i18n="drinksIntro">
+Complete your dessert experience with one of our drinks.
+</p>
+
+<div class="products">
+
+
+<div class="product-card">
+
+<img src="espresso.jpg"
+alt="Espresso"
+class="product-photo">
+
+<h3>Espresso</h3>
+
+<p data-i18n="espressoDesc">
+A classic, rich espresso.
+</p>
+
+<span>Bs 10</span>
+
+<button class="add-button"
+onclick="addToCart('Espresso',10)"
+data-i18n="add">
++ Add to Order
+</button>
+
+</div>
+
+
+<div class="product-card">
+
+<img src="latte.jpg"
+alt="Latte"
+class="product-photo">
+
+<h3>Latte</h3>
+
+<p data-i18n="latteDesc">
+Smooth espresso with steamed milk.
+</p>
+
+<span>Bs 15</span>
+
+<button class="add-button"
+onclick="addToCart('Latte',15)"
+data-i18n="add">
++ Add to Order
+</button>
+
+</div>
+
+
+<div class="product-card">
+
+<img src="cappuccino.jpg"
+alt="Cappuccino"
+class="product-photo">
+
+<h3>Cappuccino</h3>
+
+<p data-i18n="cappuccinoDesc">
+Espresso, steamed milk, and foam.
+</p>
+
+<span>Bs 15</span>
+
+<button class="add-button"
+onclick="addToCart('Cappuccino',15)"
+data-i18n="add">
++ Add to Order
+</button>
+
+</div>
+
+
+<div class="product-card">
+
+<img src="iced-latte.jpg"
+alt="Iced Latte"
+class="product-photo">
+
+<h3>Iced Latte</h3>
+
+<p data-i18n="icedLatteDesc">
+Espresso, chilled milk, and ice.
+</p>
+
+<label for="essence"
+data-i18n="essenceLabel">
+Choose your essence:
+</label>
+
+<select id="essence">
+
+<option value="Caramel"
+data-i18n="caramel">
+Caramel
+</option>
+
+<option value="Chocolate"
+data-i18n="chocEssence">
+Chocolate
+</option>
+
+<option value="Vanilla"
+data-i18n="vanilla">
+Vanilla
+</option>
+
+</select>
+
+<span>Bs 20</span>
+
+<button class="add-button"
+onclick="addIcedLatte()"
+data-i18n="add">
++ Add to Order
+</button>
+
+</div>
+
+
+<div class="product-card">
+
+<img src="iced-americano.jpg"
+alt="Iced Americano"
+class="product-photo">
+
+<h3>Iced Americano</h3>
+
+<p data-i18n="icedAmericanoDesc">
+Espresso, cold water, and ice.
+</p>
+
+<span>Bs 20</span>
+
+<button class="add-button"
+onclick="addToCart('Iced Americano',20)"
+data-i18n="add">
++ Add to Order
+</button>
+
+</div>
+
+
+<div class="product-card">
+
+<img src="frappuccino.jpg"
+alt="Frappuccino"
+class="product-photo">
+
+<h3>Frappuccino</h3>
+
+<p data-i18n="frappuccinoDesc">
+A cold, creamy blended coffee drink.
+</p>
+
+<span>Bs 20</span>
+
+<button class="add-button"
+onclick="addToCart('Frappuccino',20)"
+data-i18n="add">
++ Add to Order
+</button>
+
+</div>
+
+</div>
+</section>
+
 
 <section class="featured">
 
-    <p class="small-title">LIMITED EDITION</p>
+<p class="small-title" data-i18n="limited">
+LIMITED EDITION
+</p>
 
-    <h2>Dessert of the Month</h2>
+<h2 data-i18n="monthTitle">
+Dessert of the Month
+</h2>
 
-    <p>
-        Every month, Lamecie will introduce something new,
-        creative, and delicious.
-    </p>
+<p data-i18n="monthText">
+Every month, Lamecie will introduce something new, creative, and delicious.
+</p>
 
-    <button
-        class="button"
-        onclick="alert('Our first Dessert of the Month is coming soon! 🍰')"
-    >
-        Coming Soon
-    </button>
+<button class="button"
+onclick="showComingSoon()"
+data-i18n="comingSoon">
+Coming Soon
+</button>
 
 </section>
 
-
-<!-- ================= ORDER ================= -->
 
 <section id="orders" class="orders">
 
-    <p class="small-title">ORDER WITH US</p>
+<p class="small-title" data-i18n="orderSmall">
+ORDER WITH US
+</p>
 
-    <h2>Make it yours.</h2>
+<h2 data-i18n="orderTitle">
+Make it yours.
+</h2>
 
-    <p>
-        Choose your favorite desserts and place an order
-        for pickup or delivery.
-    </p>
+<p data-i18n="orderText">
+Choose your favorite desserts and place an order for pickup or delivery.
+</p>
 
+<form id="order-form" onsubmit="submitOrder(event)">
 
-    <form id="order-form" onsubmit="submitOrder(event)">
+<input
+type="text"
+id="customer-name"
+data-placeholder="namePlaceholder"
+placeholder="Your name"
+required
+>
 
-        <input
-            type="text"
-            id="customer-name"
-            placeholder="Your name"
-            required
-        >
+<select id="order-method" required>
 
-        <select id="order-method" required>
+<option value=""
+data-i18n="selectMethod">
+Select pickup or delivery
+</option>
 
-            <option value="">
-                Select pickup or delivery
-            </option>
+<option value="Store Pickup"
+data-i18n="pickup">
+Store Pickup
+</option>
 
-            <option value="Store Pickup">
-                Store Pickup
-            </option>
+<option value="Delivery"
+data-i18n="delivery">
+Delivery
+</option>
 
-            <option value="Delivery">
-                Delivery
-            </option>
+</select>
 
-        </select>
+<textarea
+data-placeholder="instructionsPlaceholder"
+placeholder="Special instructions (optional)"
+rows="4">
+</textarea>
 
+<button
+type="submit"
+class="button"
+data-i18n="placeOrder">
+Place Order
+</button>
 
-        <textarea
-            placeholder="Special instructions (optional)"
-            rows="4"
-        ></textarea>
-
-
-        <button
-            type="submit"
-            class="button"
-        >
-            Place Order
-        </button>
-
-    </form>
+</form>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
-
 <section id="contact" class="contact">
 
-    <p class="small-title">COME VISIT US</p>
+<p class="small-title" data-i18n="visit">
+COME VISIT US
+</p>
 
-    <h2>Lamecie Bakery</h2>
+<h2>Lamecie Bakery</h2>
 
-    <p>
-        Equipetrol, Santa Cruz de la Sierra, Bolivia
-    </p>
+<p data-i18n="address">
+Equipetrol, Santa Cruz de la Sierra, Bolivia
+</p>
 
-    <p>
-        Follow us on Instagram & TikTok
-    </p>
+<p data-i18n="social">
+Follow us on Instagram & TikTok
+</p>
 
 </section>
 
 </main>
 
 
-<!-- ================= CART ================= -->
-
 <div id="cart-panel" class="cart-panel">
 
-    <div class="cart-header">
+<div class="cart-header">
 
-        <h2>Your Order</h2>
+<h2 data-i18n="yourOrder">
+Your Order
+</h2>
 
-        <button onclick="closeCart()">
-            ✕
-        </button>
+<button onclick="closeCart()">
+✕
+</button>
 
-    </div>
+</div>
 
+<div id="cart-items">
 
-    <div id="cart-items">
+<p class="empty-cart"
+data-i18n="emptyCart">
+Your cart is empty 🍰
+</p>
 
-        <p class="empty-cart">
-            Your cart is empty 🍰
-        </p>
+</div>
 
-    </div>
+<div class="cart-footer">
 
+<div class="cart-total-row">
 
-    <div class="cart-footer">
+<strong data-i18n="total">
+Total
+</strong>
 
-        <div class="cart-total-row">
+<strong id="cart-total">
+Bs 0
+</strong>
 
-            <strong>Total</strong>
+</div>
 
-            <strong id="cart-total">
-                Bs 0
-            </strong>
+<button
+class="button"
+onclick="checkout()"
+data-i18n="continueOrder">
+Continue to Order
+</button>
 
-        </div>
-
-        <button
-            class="button"
-            onclick="checkout()"
-        >
-            Continue to Order
-        </button>
-
-    </div>
+</div>
 
 </div>
 
 
-<div
-    id="cart-overlay"
-    class="cart-overlay"
-    onclick="closeCart()"
-></div>
+<div id="cart-overlay"
+class="cart-overlay"
+onclick="closeCart()">
+</div>
 
 
 <footer>
 
-    <p>
-        © 2026 Lamecie Bakery. All rights reserved.
-    </p>
+<p>
+© 2026 Lamecie Bakery.
+<span data-i18n="rights">
+All rights reserved.
+</span>
+</p>
 
-    <p>
-        Lara Torres · Maciel Nassar · Martina Guzman
-    </p>
+<p>
+Lara Torres · Maciel Nassar · Martina Guzman
+</p>
 
 </footer>
 
